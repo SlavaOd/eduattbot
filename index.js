@@ -1,4 +1,3 @@
-var promise = new Promise(function(resolve, reject) {
   const TelegramBot = require('node-telegram-bot-api');
       request = require('request');
       fs = require('fs');
@@ -60,6 +59,7 @@ bot.on('message', msg => {
           }
         });
         break;
+
       case 'Вернуться':
         bot.sendMessage(chatId, 'ok', {
           reply_markup: {
@@ -72,7 +72,6 @@ bot.on('message', msg => {
         })
     }    
 }  )
-})
 
 
 
