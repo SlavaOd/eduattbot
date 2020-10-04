@@ -1,5 +1,5 @@
-
-const TelegramBot = require('node-telegram-bot-api');
+var promise = new Promise(function(resolve, reject) {
+  const TelegramBot = require('node-telegram-bot-api');
       request = require('request');
       fs = require('fs');
       token = '1199928100:AAH8o35xpYvh1yPcOLiVEv0XHRBgD_7vLA4';
@@ -25,7 +25,7 @@ bot.on('message', msg => {
 
     switch(txt) {
       case 'Курс №1':
-        bot.sendMessage(chatId, 'Вы выбрали Лекцию №1', {
+        bot.sendMessage(chatId, 'Вы выбрали Курс №1', {
           reply_markup: {
             keyboard: [
               ['Лекция №1'],
@@ -37,7 +37,7 @@ bot.on('message', msg => {
         });
         break;
       case 'Курс №2':
-        bot.sendMessage(chatId, 'Вы выбрали Лекцию №2', {
+        bot.sendMessage(chatId, 'Вы выбрали Курс №2', {
           reply_markup: {
             keyboard: [
               ['Лекция №1'],
@@ -49,7 +49,7 @@ bot.on('message', msg => {
         });
         break;
       case 'Курс №3':
-        bot.sendMessage(chatId, 'Вы выбрали Лекцию №3', {
+        bot.sendMessage(chatId, 'Вы выбрали Курс №3', {
           reply_markup: {
             keyboard: [
               ['Лекция №1'],
@@ -61,7 +61,7 @@ bot.on('message', msg => {
         });
         break;
       case 'Вернуться':
-        bot.sendMessage(chatId, {
+        bot.sendMessage(chatId, 'ok', {
           reply_markup: {
             keyboard: [
               ['Курс №1'],
@@ -72,6 +72,11 @@ bot.on('message', msg => {
         })
     }    
 }  )
+})
+
+
+
+
 
 
 
